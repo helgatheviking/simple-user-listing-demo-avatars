@@ -1,0 +1,38 @@
+{
+  "name": "helgatheviking/simple-user-listing-demo-avatars",
+  "description": "Use Picsum.photos to generate some random random avatars for testing Simple User Listing.",
+  "homepage": "https://kathyisawesome.com",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "require-dev": {
+      "woocommerce/woocommerce-sniffs": "^1.0.0",
+      "wp-cli/dist-archive-command": "dev-main"
+  },
+  "scripts": {
+    "phpcs": [
+        "phpcs . -s -p -n"
+    ],
+    "phpcs-pre-commit": [
+      "phpcs . -s -p -n"
+    ],
+    "phpcb": [
+        "phpcbf ."
+    ],
+    "zip" : [
+      "wp dist-archive . ./deploy --create-target-dir"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+        "composer/installers": true,
+        "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "extra": {
+    "scripts-description": {
+        "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+        "phpcb": "Fix coding standards warnings/errors automatically with PHP Code Beautifier",
+        "zip": "Generate a compressed zip file for distribution"
+    }
+  }
+}
